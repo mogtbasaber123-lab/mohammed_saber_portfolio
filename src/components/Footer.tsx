@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Landmark } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { footer, personalInfo } = portfolioData;
@@ -11,8 +11,8 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-              MS
+            <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shadow-xs">
+              <Landmark className="w-4 h-4 text-white" />
             </div>
             <div>
               <span className="font-bold text-white text-sm block">
