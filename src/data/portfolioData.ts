@@ -236,16 +236,25 @@ export const portfolioData: PortfolioData = {
   ],
   academicDegree: {
     id: "degree-1",
-    title: "Bachelor’s Degree in Financial and Banking Studies",
+    title: "Bachelor’s Degree in Banking & Financial Studies",
     issuer: "Sudan Academy for Banking & Financial Sciences",
     period: "Oct 2015 – Jan 2020",
     grade: "Very Good",
     type: "academic",
-    description: "Department of Management and Accounting. Specialized in corporate finance, auditing principles, banking operations, and financial management.",
+    description: "Awarded B.Sc. in Banking & Financial Sciences (Certificate No: 0014662). Passed with grade Very Good on 16th of January 2020, specializing in financial management, corporate banking, and auditing.",
     image: "/images/cert-degree.jpg",
     badge: "B.Sc. Degree"
   },
   certifications: [
+    {
+      id: "cert-uk",
+      title: "ACCA — Chartered Certified Accountant",
+      issuer: "Association of Chartered Certified Accountants (UK)",
+      type: "certification",
+      description: "Admitted as a certified Member of ACCA UK on 01 May 2025. Certified in international financial reporting, strategic auditing, and executive financial management.",
+      image: "/images/cert-uk.jpg",
+      badge: "ACCA Member (UK)"
+    },
     {
       id: "cert-socpa",
       title: "SOCPA — Associate Membership",
@@ -254,15 +263,6 @@ export const portfolioData: PortfolioData = {
       description: "Certified Active Associate Member of SOCPA (Membership No: 114770). Demonstrating full compliance with Saudi accounting, auditing, and tax regulatory frameworks.",
       image: "/images/cert-socpa.jpg",
       badge: "Membership No: 114770"
-    },
-    {
-      id: "cert-uk",
-      title: "British Accounting Fellowship",
-      issuer: "Chartered Professional Qualification (UK)",
-      type: "certification",
-      description: "Chartered professional fellowship demonstrating international excellence in financial management, corporate reporting, and audit.",
-      image: "/images/cert-uk.jpg",
-      badge: "International Fellowship"
     },
     {
       id: "cert-appreciation",
