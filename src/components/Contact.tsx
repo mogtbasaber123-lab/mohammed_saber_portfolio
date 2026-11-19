@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Copy, Check, Send, MessageSquare, ExternalLink, QrCode, X } from 'lucide-react';
+import { Copy, Check, MessageSquare, ExternalLink, QrCode, X } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
   const { contactInfo } = portfolioData;
   const [copiedField, setCopiedField] = useState<string | null>(null);
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [qrModalOpen, setQrModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
 
   const handleCopy = (text: string, fieldName: string) => {
     navigator.clipboard.writeText(text);
@@ -21,16 +14,6 @@ export const Contact: React.FC = () => {
     setTimeout(() => {
       setCopiedField(null);
     }, 2500);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.message) return;
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ fullName: '', email: '', subject: '', message: '' });
-    }, 5000);
   };
 
   const containerVariants = {
@@ -192,97 +175,83 @@ export const Contact: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Right Column: Contact Form */}
-          <motion.div variants={itemVariants} className="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-6">
-              Send an Executive Inquiry
-            </h3>
+          {/* Right Column: Executive Engagement & Action Card (Replaces Form) */}
+          <motion.div variants={itemVariants} className="lg:col-span-7 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 text-white rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden flex flex-col justify-between space-y-6">
+            {/* Background Glow */}
+            <div className="absolute top-0 right-0 -z-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            {formSubmitted ? (
-              <div className="p-6 rounded-xl bg-emerald-50 border border-emerald-200 text-center space-y-3 animate-in fade-in duration-300">
-                <div className="w-12 h-12 rounded-full bg-emerald-600 text-white mx-auto flex items-center justify-center font-bold">
-                  <Check className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-emerald-900">
-                  Message Sent Successfully!
-                </h4>
-                <p className="text-xs sm:text-sm text-emerald-700 max-w-md mx-auto">
-                  Thank you for reaching out. Mohammed Saber will review your inquiry and get back to you promptly.
-                </p>
+            <div className="space-y-4 relative z-10">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-bold uppercase tracking-wider">
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Executive Engagement Standard</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Full Name */}
-                  <div className="space-y-1.5">
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                      Full Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Alexander Vance"
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
-                    />
-                  </div>
 
-                  {/* Email Address */}
-                  <div className="space-y-1.5">
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="e.g. alexander@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
-                    />
-                  </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+                Direct Professional Engagement
+              </h3>
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                To discuss corporate financial management, audit preparation, or strategic accounting, reach out directly through any of the verified channels.
+              </p>
+
+              {/* Response Time Guarantee Pill */}
+              <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="font-bold text-white block mb-0.5">
+                    Fast Response Guarantee:
+                  </strong>
+                  <span>All professional communications are reviewed and responded to within 2–4 business hours.</span>
                 </div>
+              </div>
+            </div>
 
-                {/* Subject */}
-                <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. Senior Accountant Opportunity / Audit Consultation"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
-                  />
-                </div>
+            {/* Direct Quick Action Buttons */}
+            <div className="space-y-3 relative z-10 pt-2">
+              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                Choose Preferred Channel
+              </h4>
 
-                {/* Message */}
-                <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Please type your message here..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all resize-none"
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-base shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.98]"
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Email Action Button */}
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-md transition-all active:scale-[0.98]"
                 >
-                  <Send className="w-5 h-5" />
-                  <span>Send Message</span>
-                </button>
-              </form>
-            )}
+                  <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                  <span>Send Direct Email</span>
+                </a>
+
+                {/* WhatsApp Action Button */}
+                <a
+                  href={contactInfo.whatsapp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all active:scale-[0.98]"
+                >
+                  <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  <span>WhatsApp Chat</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Credential Badges Footer */}
+            <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-2 relative z-10 text-[11px] text-slate-400 font-semibold">
+              <span className="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-emerald-400">
+                SOCPA Certified
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-blue-300">
+                ACCA UK Member
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-slate-300">
+                5+ Years Senior Accounting
+              </span>
+            </div>
           </motion.div>
         </motion.div>
       </div>
