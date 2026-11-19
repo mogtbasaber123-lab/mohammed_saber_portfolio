@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="40" fill="#0F172A"/>
+  <!-- Lightbulb / Lampaah Emblem -->
+  <path d="M100 40 C75 40 55 60 55 85 C55 102 67 116 75 125 L75 140 C75 143 77 145 80 145 L120 145 C123 145 125 143 125 140 L125 125 C133 116 145 102 145 85 C145 60 125 40 100 40 Z" fill="#F59E0B"/>
+  <rect x="82" y="148" width="36" height="6" rx="3" fill="#D97706"/>
+  <rect x="86" y="157" width="28" height="6" rx="3" fill="#B45309"/>
+  <!-- Glow Filament -->
+  <path d="M90 85 Q 100 70, 110 85" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <text x="100" y="185" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#F59E0B" text-anchor="middle" letter-spacing="1">LAMPAAH</text>
+</svg>
