@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { Menu, X, FileText, Briefcase, Award, Phone, UserCheck, ShieldCheck, Landmark } from 'lucide-react';
+import { Menu, X, FileText, Briefcase, Award, Phone, UserCheck, ShieldCheck } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
@@ -67,16 +67,13 @@ export const Navbar: React.FC = () => {
           {/* Brand Name */}
           <a
             href="#about"
-            className="flex items-center gap-3 group text-left focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-lg p-1"
+            className="flex items-center group text-left focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-lg p-1"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-slate-800 to-blue-900 text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200 border border-slate-700/60">
-              <Landmark className="w-5 h-5 text-emerald-400" />
-            </div>
             <div>
-              <span className="block font-extrabold text-slate-900 text-lg leading-tight tracking-tight group-hover:text-blue-700 transition-colors">
+              <span className="block font-extrabold text-slate-900 text-lg sm:text-xl leading-tight tracking-tight group-hover:text-blue-700 transition-colors">
                 {portfolioData.personalInfo.name}
               </span>
-              <span className="block text-xs font-semibold text-emerald-600 tracking-wide uppercase">
+              <span className="block text-xs font-bold text-emerald-600 tracking-wide uppercase">
                 {portfolioData.personalInfo.title}
               </span>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, ArrowRight, ShieldCheck, CheckCircle2, Award, TrendingUp, User, MapPin } from 'lucide-react';
+import { FileText, ArrowRight, ShieldCheck, CheckCircle2, Award, TrendingUp, User, MapPin, ChevronDown } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { AnimatedCounter } from './AnimatedCounter';
 
@@ -165,6 +165,18 @@ export const Hero: React.FC = () => {
               ))}
             </motion.div>
           </div>
+        </motion.div>
+
+        {/* Static Down Arrow Scroll Indicator */}
+        <motion.div variants={itemVariants} className="pt-10 sm:pt-14 flex justify-center">
+          <a
+            href="#experience"
+            className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-500 hover:text-blue-700 hover:border-blue-300 hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+            aria-label="Scroll to Work Experience"
+            title="Scroll down to Experience"
+          >
+            <ChevronDown className="w-6 h-6 stroke-[2.5] text-slate-600" />
+          </a>
         </motion.div>
       </div>
     </section>
