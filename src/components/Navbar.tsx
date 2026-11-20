@@ -64,21 +64,6 @@ export const Navbar: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Name */}
-          <a
-            href="#about"
-            className="flex items-center group text-left focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-lg p-1"
-          >
-            <div>
-              <span className="block font-extrabold text-slate-900 text-lg sm:text-xl leading-tight tracking-tight group-hover:text-blue-700 transition-colors">
-                {portfolioData.personalInfo.name}
-              </span>
-              <span className="block text-xs font-bold text-emerald-600 tracking-wide uppercase">
-                {portfolioData.personalInfo.title}
-              </span>
-            </div>
-          </a>
-
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => {
@@ -87,7 +72,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                     isActive
                       ? 'text-blue-700 bg-blue-50/80 font-bold'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
@@ -112,8 +97,18 @@ export const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Navigation Header */}
+          <div className="md:hidden flex items-center justify-between w-full">
+            <a
+              href={portfolioData.personalInfo.cvPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-blue-700 text-white font-semibold text-xs shadow-xs"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Download CV</span>
+            </a>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
