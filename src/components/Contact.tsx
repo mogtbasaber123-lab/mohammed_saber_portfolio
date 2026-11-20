@@ -175,79 +175,76 @@ export const Contact: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Right Column: Executive Financial Governance & Value Commitment (Option 1) */}
-          <motion.div variants={itemVariants} className="lg:col-span-7 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 text-white rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl relative overflow-hidden flex flex-col justify-between space-y-6">
-            {/* Background Decorative Glow */}
-            <div className="absolute top-0 right-0 -z-0 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="space-y-4 relative z-10">
+          {/* Right Column: Executive Financial Governance & Value Commitment (Executive Light Theme) */}
+          <motion.div variants={itemVariants} className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
               {/* Pillar Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold uppercase tracking-wider">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Executive Governance &amp; Impact</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
                 Uncompromising Precision &amp; Data Confidentiality
               </h3>
 
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 Delivering executive-grade accounting, rigorous financial controls, and complete alignment with international reporting standards and regional tax frameworks.
               </p>
 
-              {/* 3 Core Value Pillars */}
+              {/* 3 Core Value Pillars (Light Theme Cards) */}
               <div className="space-y-3 pt-2">
                 {/* Pillar 1: Confidentiality */}
-                <div className="p-3.5 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-3 text-xs sm:text-sm text-slate-300 shadow-xs">
-                  <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 flex-shrink-0 mt-0.5">
+                <div className="p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 flex items-start gap-3.5 text-xs sm:text-sm shadow-2xs hover:border-emerald-300 transition-colors">
+                  <div className="p-2 rounded-xl bg-emerald-100/70 text-emerald-800 flex-shrink-0 mt-0.5">
                     <Lock className="w-4 h-4" />
                   </div>
                   <div>
-                    <strong className="font-bold text-white block mb-0.5">
+                    <strong className="font-bold text-slate-900 block mb-0.5">
                       Absolute Data Confidentiality:
                     </strong>
-                    <span>Strict ethical management and complete privacy protection of all corporate ledgers, revenues, and financial records.</span>
+                    <span className="text-slate-600">Strict ethical management and complete privacy protection of all corporate ledgers, revenues, and financial records.</span>
                   </div>
                 </div>
 
                 {/* Pillar 2: Regulatory Compliance */}
-                <div className="p-3.5 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-3 text-xs sm:text-sm text-slate-300 shadow-xs">
-                  <div className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400 flex-shrink-0 mt-0.5">
+                <div className="p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 flex items-start gap-3.5 text-xs sm:text-sm shadow-2xs hover:border-blue-300 transition-colors">
+                  <div className="p-2 rounded-xl bg-blue-100/70 text-blue-800 flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <strong className="font-bold text-white block mb-0.5">
+                    <strong className="font-bold text-slate-900 block mb-0.5">
                       100% Tax &amp; Audit Compliance:
                     </strong>
-                    <span>Proven record in IFRS, SOCPA, VAT, WHT, and ZATCA E-Invoicing integration with zero audit variances or penalties.</span>
+                    <span className="text-slate-600">Proven record in IFRS, SOCPA, VAT, WHT, and ZATCA E-Invoicing integration with zero audit variances or penalties.</span>
                   </div>
                 </div>
 
                 {/* Pillar 3: Closing Discipline */}
-                <div className="p-3.5 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-3 text-xs sm:text-sm text-slate-300 shadow-xs">
-                  <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 flex-shrink-0 mt-0.5">
+                <div className="p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 flex items-start gap-3.5 text-xs sm:text-sm shadow-2xs hover:border-emerald-300 transition-colors">
+                  <div className="p-2 rounded-xl bg-emerald-100/70 text-emerald-800 flex-shrink-0 mt-0.5">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <strong className="font-bold text-white block mb-0.5">
+                    <strong className="font-bold text-slate-900 block mb-0.5">
                       Strict Closing Deadline Discipline:
                     </strong>
-                    <span>Streamlined monthly and annual financial close turnaround, improving reporting turnaround time by 30%.</span>
+                    <span className="text-slate-600">Streamlined monthly and annual financial close turnaround, improving reporting turnaround time by 30%.</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Verified Credential Badges */}
-            <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-2 relative z-10 text-[11px] text-slate-400 font-semibold">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-emerald-400">
-                <Award className="w-3.5 h-3.5" /> SOCPA Certified Member
+            {/* Verified Credential Badges Footer */}
+            <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2 text-[11px] font-bold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800">
+                <Award className="w-3.5 h-3.5 text-emerald-600" /> SOCPA Certified Member
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-blue-300">
-                <Award className="w-3.5 h-3.5" /> ACCA UK Member
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-blue-50 border border-blue-200 text-blue-800">
+                <Award className="w-3.5 h-3.5 text-blue-600" /> ACCA UK Member
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">
-                <Check className="w-3.5 h-3.5 text-emerald-400" /> 5+ Years Senior Accounting
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-700">
+                <Check className="w-3.5 h-3.5 text-emerald-600" /> 5+ Years Senior Accounting
               </span>
             </div>
           </motion.div>
