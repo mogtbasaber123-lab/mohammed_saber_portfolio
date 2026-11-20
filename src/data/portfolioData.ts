@@ -265,6 +265,24 @@ export const portfolioData: PortfolioData = {
       badge: "Membership No: 114770"
     },
     {
+      id: "cert-sudacad",
+      title: "Diploma in Electronic Accounting",
+      issuer: "Sudatel Telecommunications Academy (SUDACAD)",
+      type: "certification",
+      description: "Professional Diploma in Electronic Accounting systems and financial software (19 Jan 2020 – 20 Feb 2020). Certified in computerized accounting systems and automated ledger management.",
+      image: "/images/cert-sudacad.jpg",
+      badge: "Professional Diploma"
+    },
+    {
+      id: "cert-cbos",
+      title: "Banking Operations & Management Certification",
+      issuer: "Central Bank of Sudan (CBOS) Training Centre",
+      type: "certification",
+      description: "Completed intensive practical training program in banking operations, treasury, and departmental financial controls (14 Oct 2018 – 25 Oct 2018).",
+      image: "/images/cert-cbos.jpg",
+      badge: "Central Bank Certification"
+    },
+    {
       id: "cert-appreciation",
       title: "Certificate of Appreciation (CBAHI)",
       issuer: "Taib Medical Co. & CBAHI Board",

@@ -120,7 +120,7 @@ export const Certifications: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {certifications.map((cert) => (
             <motion.div
@@ -129,15 +129,15 @@ export const Certifications: React.FC = () => {
               className="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Thumbnail Preview Slot */}
+                {/* Thumbnail Preview Slot (100% Uncropped Preview) */}
                 <div
                   onClick={() => setSelectedCert(cert)}
-                  className="relative aspect-[16/10] bg-slate-100 overflow-hidden cursor-pointer border-b border-slate-200 group/img"
+                  className="relative aspect-[4/3] bg-slate-950 overflow-hidden cursor-pointer border-b border-slate-200 p-3 flex items-center justify-center group/img"
                 >
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain mx-auto group-hover/img:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="px-3.5 py-1.5 rounded-lg bg-white/95 text-slate-900 text-xs font-bold flex items-center gap-1.5 shadow-md">
