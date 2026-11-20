@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, X, FileText, Briefcase, Award, Phone, UserCheck, ShieldCheck, Landmark } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -6,6 +7,13 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +56,12 @@ export const Navbar: React.FC = () => {
           : 'bg-white/70 backdrop-blur-sm border-b border-slate-200/60 py-5'
       }`}
     >
+      {/* Top Scroll Progress Line */}
+      <motion.div
+        style={{ scaleX }}
+        className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-700 origin-left z-50 shadow-xs"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Name */}
