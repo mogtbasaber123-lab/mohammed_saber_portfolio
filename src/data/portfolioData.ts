@@ -130,28 +130,28 @@ export const portfolioData: PortfolioData = {
       achievements: [
         {
           category: "Financial Close & Reporting",
-          description: "Led monthly and year-end closing processes and prepared accurate financial statements in compliance with accounting standards, reducing closing turnaround time by ",
-          highlightMetric: "30%"
+          description: "Led monthly and year-end closing processes and prepared accurate financial statements in compliance with IFRS standards, achieving ",
+          highlightMetric: "Streamlined Closing"
         },
         {
           category: "Team Supervision & Audit",
-          description: "Supervised junior accountants and reviewed daily journal entries, bank reconciliations, and AR/AP accounts, maintaining ",
-          highlightMetric: "100% balance accuracy"
+          description: "Supervised junior accountants and reviewed daily journal entries, bank reconciliations, and AR/AP accounts with ",
+          highlightMetric: "Zero Variance Reconciliations"
         },
         {
           category: "Tax & Regulatory Compliance",
-          description: "Prepared and reviewed periodic tax and Zakat returns, ensuring full adherence to financial policies and achieving ",
-          highlightMetric: "100% compliance with zero penalties"
+          description: "Prepared and reviewed periodic tax and Zakat returns, ensuring full adherence to financial policies with ",
+          highlightMetric: "Zero Penalty Record"
         },
         {
           category: "Financial Analysis & Asset Control",
-          description: "Monitored operating expenses, revenues, and fixed asset registers, delivering actionable financial insights to senior management that optimized costs by ",
-          highlightMetric: "15%"
+          description: "Monitored operating expenses, revenues, and fixed asset registers, delivering actionable financial insights for ",
+          highlightMetric: "Cost Optimization"
         },
         {
           category: "External & Internal Audit Coordination",
-          description: "Acted as the primary point of contact for internal and external auditors, facilitating smooth, on-time completion of ",
-          highlightMetric: "100% of annual audits"
+          description: "Acted as the primary point of contact for internal and external auditors, facilitating smooth completion of ",
+          highlightMetric: "Flawless Annual Audits"
         }
       ]
     },
@@ -166,28 +166,28 @@ export const portfolioData: PortfolioData = {
       achievements: [
         {
           category: "Financial Close & Reporting",
-          description: "Led monthly and year-end closing processes and prepared accurate financial statements in compliance with accounting standards, reducing closing turnaround time by ",
-          highlightMetric: "30%"
+          description: "Managed monthly closing cycles, general ledger accounts, and prepared structured financial statements with ",
+          highlightMetric: "On-Time Closing"
         },
         {
-          category: "Team Supervision & Audit",
-          description: "Supervised junior accountants and reviewed daily journal entries, bank reconciliations, and AR/AP accounts, maintaining ",
-          highlightMetric: "100% balance accuracy"
+          category: "Internal Controls & Audit",
+          description: "Reviewed daily journal entries, bank reconciliations, and AR/AP accounts, maintaining ",
+          highlightMetric: "100% Balance Accuracy"
         },
         {
-          category: "Tax & Regulatory Compliance",
-          description: "Prepared and reviewed periodic tax and Zakat returns, ensuring full adherence to financial policies and achieving ",
-          highlightMetric: "100% compliance with zero penalties"
+          category: "Tax & Regulatory Adherence",
+          description: "Managed periodic tax filings, VAT, WHT, and CBAHI financial accreditation requirements with ",
+          highlightMetric: "Zero Audit Variances"
         },
         {
           category: "Financial Analysis & Asset Control",
-          description: "Monitored operating expenses, revenues, and fixed asset registers, delivering actionable financial insights to senior management that optimized costs by ",
-          highlightMetric: "15%"
+          description: "Monitored operating expenses, revenues, and fixed asset registers, delivering actionable insights for ",
+          highlightMetric: "Operational Efficiency"
         },
         {
           category: "External & Internal Audit Coordination",
-          description: "Acted as the primary point of contact for internal and external auditors, facilitating smooth, on-time completion of ",
-          highlightMetric: "100% of annual audits"
+          description: "Coordinated directly with external auditors and regulatory inspectors, achieving ",
+          highlightMetric: "Flawless Audit Sign-Off"
         }
       ]
     }
