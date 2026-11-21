@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Database, BarChart3, ShieldCheck, FileCheck, Award, Landmark, Building2, CheckCircle2 } from 'lucide-react';
 import { portfolioData, SkillCategory } from '../data/portfolioData';
+
+const BrandIconImage: React.FC<{ src: string; alt: string; fallbackText: string; bgClass?: string }> = ({
+  src,
+  alt,
+  fallbackText,
+  bgClass = 'bg-blue-50 text-blue-700 border-blue-100',
+}) => {
+  const [error, setError] = useState(false);
+
+  if (!error) {
+    return (
+      <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200/90 p-1 flex items-center justify-center flex-shrink-0 shadow-2xs overflow-hidden group-hover:border-blue-300 transition-colors">
+        <img
+          src={src}
+          alt={alt}
+          onError={() => setError(true)}
+          className="w-full h-full object-contain rounded-xl"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className={`w-10 h-10 rounded-2xl ${bgClass} flex items-center justify-center font-extrabold text-xs border flex-shrink-0 shadow-2xs`}>
+      {fallbackText}
+    </div>
+  );
+};
 
 export const Skills: React.FC = () => {
   const { skillCategories } = portfolioData;
@@ -19,46 +47,59 @@ export const Skills: React.FC = () => {
     }
   };
 
-  const getSkillBrandIcon = (skillName: string) => {
+  const getSkillBrandComponent = (skillName: string) => {
     if (skillName.includes('Zoho')) {
       return (
-        <div className="w-9 h-9 rounded-xl bg-red-50 text-[#C8202B] flex items-center justify-center font-extrabold text-xs border border-red-100 flex-shrink-0 shadow-2xs">
-          Zoho
-        </div>
+        <BrandIconImage
+          src="/images/zoho.jpg"
+          alt="Zoho Books"
+          fallbackText="Zoho"
+          bgClass="bg-red-50 text-[#C8202B] border-red-100"
+        />
       );
     }
     if (skillName.includes('Odoo')) {
       return (
-        <div className="w-9 h-9 rounded-xl bg-purple-50 text-[#714B67] flex items-center justify-center font-extrabold text-xs border border-purple-100 flex-shrink-0 shadow-2xs">
-          odoo
-        </div>
+        <BrandIconImage
+          src="/images/odoo.jpg"
+          alt="Odoo ERP"
+          fallbackText="Odoo"
+          bgClass="bg-purple-50 text-[#714B67] border-purple-100"
+        />
       );
     }
     if (skillName.includes('QuickBooks')) {
       return (
-        <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#003366] flex items-center justify-center font-extrabold text-xs border border-blue-100 flex-shrink-0 shadow-2xs">
-          SAP/QB
-        </div>
+        <BrandIconImage
+          src="/images/quickbooks.jpg"
+          alt="QuickBooks & SAP"
+          fallbackText="QB/SAP"
+          bgClass="bg-blue-50 text-[#003366] border-blue-100"
+        />
       );
     }
     if (skillName.includes('Excel')) {
       return (
-        <div className="w-9 h-9 rounded-xl bg-emerald-50 text-[#107C41] flex items-center justify-center font-extrabold text-xs border border-emerald-100 flex-shrink-0 shadow-2xs">
-          <svg className="w-5 h-5 fill-current text-[#107C41]" viewBox="0 0 24 24">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3.5 13.5l-3-4.5 3-4.5h-2.2l-1.9 3.2-1.9-3.2H7.3l3 4.5-3 4.5h2.2l1.9-3.2 1.9 3.2h2.2z"/>
-          </svg>
-        </div>
+        <BrandIconImage
+          src="/images/excel.jpg"
+          alt="Microsoft Excel"
+          fallbackText="Excel"
+          bgClass="bg-emerald-50 text-[#107C41] border-emerald-100"
+        />
       );
     }
     if (skillName.includes('Power BI')) {
       return (
-        <div className="w-9 h-9 rounded-xl bg-amber-50 text-[#F2C811] flex items-center justify-center font-extrabold text-xs border border-amber-200 flex-shrink-0 shadow-2xs">
-          <BarChart3 className="w-5 h-5 text-amber-600" />
-        </div>
+        <BrandIconImage
+          src="/images/powerbi.png"
+          alt="Microsoft Power BI"
+          fallbackText="PowerBI"
+          bgClass="bg-amber-50 text-amber-600 border-amber-200"
+        />
       );
     }
     return (
-      <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-extrabold text-xs border border-emerald-200 flex-shrink-0 shadow-2xs">
+      <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-extrabold text-xs border border-emerald-200/80 flex-shrink-0 shadow-2xs">
         <ShieldCheck className="w-5 h-5 text-emerald-600" />
       </div>
     );
@@ -136,7 +177,7 @@ export const Skills: React.FC = () => {
           </p>
         </div>
 
-        {/* Proposal 2: 3 Skill Category Cards Grid with Official Software Brand Icons */}
+        {/* 3 Skill Category Cards Grid with Real Uploaded Brand Images */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -168,17 +209,17 @@ export const Skills: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Skills List with Brand Icons */}
+                  {/* Skills List with Real Brand Images */}
                   <div className="space-y-3.5">
                     {category.skills.map((skill, sIdx) => {
-                      const BrandIcon = getSkillBrandIcon(skill.name);
+                      const BrandComp = getSkillBrandComponent(skill.name);
                       return (
                         <div
                           key={sIdx}
                           className="p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/70 hover:border-blue-200 hover:bg-slate-100/60 transition-all"
                         >
-                          <div className="flex items-start gap-3">
-                            {BrandIcon}
+                          <div className="flex items-start gap-3.5">
+                            {BrandComp}
                             <div className="space-y-1">
                               <span className="font-extrabold text-slate-900 text-sm block leading-tight">
                                 {skill.name}
@@ -200,7 +241,7 @@ export const Skills: React.FC = () => {
           })}
         </motion.div>
 
-        {/* Proposal 1: Executive Accounting Frameworks & Compliance Strip */}
+        {/* Executive Accounting Frameworks & Compliance Strip */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
