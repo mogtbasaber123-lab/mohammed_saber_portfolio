@@ -111,8 +111,8 @@ export const portfolioData: PortfolioData = {
       description: "Zero discrepancy track record across major audits"
     },
     {
-      value: "5+",
-      numberValue: 5,
+      value: "10+",
+      numberValue: 10,
       suffix: "+",
       label: "Accounting & ERP Systems Mastered",
       description: "Hands-on expertise in Zoho, Odoo, SAP, QuickBooks & Excel"
