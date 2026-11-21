@@ -3,21 +3,31 @@ import { motion } from 'framer-motion';
 import { Database, BarChart3, ShieldCheck, FileCheck, Award, Landmark, Building2, CheckCircle2 } from 'lucide-react';
 import { portfolioData, SkillCategory } from '../data/portfolioData';
 
-const BrandIconImage: React.FC<{ src: string; alt: string; fallbackText: string; bgClass?: string }> = ({
+const BrandIconImage: React.FC<{ src: string; fallbackSrc?: string; alt: string; fallbackText: string; bgClass?: string }> = ({
   src,
+  fallbackSrc,
   alt,
   fallbackText,
   bgClass = 'bg-blue-50 text-blue-700 border-blue-100',
 }) => {
+  const [imgSrc, setImgSrc] = useState(src);
   const [error, setError] = useState(false);
+
+  const handleError = () => {
+    if (fallbackSrc && imgSrc !== fallbackSrc) {
+      setImgSrc(fallbackSrc);
+    } else {
+      setError(true);
+    }
+  };
 
   if (!error) {
     return (
       <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200/90 p-1 flex items-center justify-center flex-shrink-0 shadow-2xs overflow-hidden group-hover:border-blue-300 transition-colors">
         <img
-          src={src}
+          src={imgSrc}
           alt={alt}
-          onError={() => setError(true)}
+          onError={handleError}
           className="w-full h-full object-contain rounded-xl"
         />
       </div>
@@ -52,9 +62,10 @@ export const Skills: React.FC = () => {
       return (
         <BrandIconImage
           src="/images/zoho.jpg"
+          fallbackSrc="/images/zoho.png"
           alt="Zoho Books"
           fallbackText="Zoho"
-          bgClass="bg-red-50 text-[#C8202B] border-red-100"
+          bgClass="bg-blue-50 text-blue-700 border-blue-100"
         />
       );
     }
@@ -62,6 +73,7 @@ export const Skills: React.FC = () => {
       return (
         <BrandIconImage
           src="/images/odoo.jpg"
+          fallbackSrc="/images/odoo.png"
           alt="Odoo ERP"
           fallbackText="Odoo"
           bgClass="bg-purple-50 text-[#714B67] border-purple-100"
@@ -72,6 +84,7 @@ export const Skills: React.FC = () => {
       return (
         <BrandIconImage
           src="/images/quickbooks.jpg"
+          fallbackSrc="/images/quickbooks.avif"
           alt="QuickBooks & SAP"
           fallbackText="QB/SAP"
           bgClass="bg-blue-50 text-[#003366] border-blue-100"
@@ -82,6 +95,7 @@ export const Skills: React.FC = () => {
       return (
         <BrandIconImage
           src="/images/excel.jpg"
+          fallbackSrc="/images/excel.png"
           alt="Microsoft Excel"
           fallbackText="Excel"
           bgClass="bg-emerald-50 text-[#107C41] border-emerald-100"
@@ -92,6 +106,7 @@ export const Skills: React.FC = () => {
       return (
         <BrandIconImage
           src="/images/powerbi.png"
+          fallbackSrc="/images/powerbi.jpg"
           alt="Microsoft Power BI"
           fallbackText="PowerBI"
           bgClass="bg-amber-50 text-amber-600 border-amber-200"
