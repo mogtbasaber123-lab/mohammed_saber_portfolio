@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, Building2, CheckCircle2, BarChart3, ShieldCheck, Award, TrendingUp, Sparkles, MapPin, Layers } from 'lucide-react';
+import { Briefcase, Calendar, Building2, CheckCircle2, BarChart3, ShieldCheck, Award, TrendingUp, MapPin, Layers, Check } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const CompanyLogoBadge: React.FC<{ logo?: string; logoBg?: string; company: string }> = ({ logo, logoBg, company }) => {
@@ -180,7 +180,7 @@ export const Experience: React.FC = () => {
                                 Key Impact
                               </span>
                               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200/90 text-xs font-extrabold shadow-2xs group-hover/item:bg-emerald-100 transition-colors">
-                                <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                                <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[2.5]" />
                                 {ach.highlightMetric}
                               </span>
                             </div>
